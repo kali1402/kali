@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>회원가입</title>
+    <script>
+        function signup() {
+            var id = document.getElementById("id").value; // 아이디
+            var pw = document.getElementById("pw").value; // 비밀번호
+            var pwre = document.getElementById("pwre").value; // 비밀번호 확인
+            var name = document.getElementById("name").value; // 이름
+            var reid = id.length; // 아이디 글자 수 확인
+            var repw = pw.length; // 비밀번호 글자 수 확인
+
+            // 아이디 4자리 미만 12자리 초과일떄 실행
+            if(4 > reid || 12 < reid) {
+                alert("아이디는 4~12자로 입력해주세요.");
+                document.getElementById("id").focus();
+                return;
+            }
+            // 비밀번호 4자리 미만 12자리 초과일떄 실행
+            if(4 > repw || 12 < repw) {
+                alert("비밀번호는 4~12자로 입력해주세요.");
+                document.getElementById("pw").focus();
+                return;
+            }
+            //비밀번호랑 비밀번호확인이 다를떄 실행
+            if(pw!=pwre) {
+                alert("비밀번호가 맞지않습니다. 다시 입력해주세요.");
+                document.getElementById("pwre").focus();
+                return;
+            }
+            //이름을 안적었을 경우 실행
+            if(name=="") {
+                alert("이름을 입력해주세요.");
+                document.getElementById("name").focus();
+                return;
+            }
+            alert("회원가입이 성공적으로 완료되었습니다.");
+            location.href="login.html"
+            }
+        function ymdtest() {
+            var ymd1 = document.getElementById("ymd1").value;
+            
+            if(ymd1 == 1 || ymd1 == 3) {
+                alert(ymd1);
+            }
+        }
+        
+    </script>
+    <style>
+        td{
+            text-align: center;
+            padding-left: 70px;
+        }
+        input{
+            height: 15px;
+            text-align: center;
+            width: 120px;
+        }
+        input.signup1{
+            width: 50px;
+        }
+        input.signup2{
+            width:15px;
+        }
+        input.button{
+            padding: 2px;
+            width: 70px;
+            height: 100%;
+        }
+        input.gender{
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td>아이디</td>
+            <td><input type="text" id="id" value="" maxlength="12"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td><input type="text" id="pw" value="" maxlength="12"></td>
+        </tr>
+        <tr>
+            <td>비밀번호 확인</td>
+            <td><input type="text" id="pwre" value="" maxlength="12"></td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td><input type="text" id="name" value=""></td>
+        </tr>
+        <tr>
+            <td>주민등록번호</td>
+            <td>&nbsp;<input class="signup1" type="text" id="ymd" value="" maxlength="6"> - <input class="signup2" type="text" id="ymd1" value="" maxlength="1">******</td>
+            <td><input class="button" type="button" value="확인" onclick="ymdtest()"></td>
+        </tr>
+        <tr>
+            <td>성별</td>
+            <td>남자<input class="gender" id="man" type="radio" value="남자">여자<input class="gender" id="woman" type="radio" value="여자"></td>
+        </tr>
+    </table>
+    <input class="button" type="button" value="확인" onclick="signup()">
+</body>
+</html>

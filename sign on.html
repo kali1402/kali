@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script language="javascript">
+            function validate() {
+            var re = /^[a-zA-Z0-9]{4,12}$/
+            var re2 = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+
+            var id = document.getElementById("id");
+            var pw = document.getElementById("pw");
+            var email = document.getElementById("email");
+
+            if(join.name.value=="") {
+                alert("이름을 입력해 주세요");
+                join.name.focus();
+                return false;
+            }
+
+            if(!check(re,id,"아이디는 4~12자의 영문 대소문자와 숫자로만 입력")) {
+                return false;
+            }
+
+            if(!check(re,pw,"패스워드는 4~12자의 영문 대소문자와 숫자로만 입력")) {
+                return false;
+            }
+
+            if(join.pw.value != join.checkpw.value) {
+                alert("비밀번호가 다릅니다. 다시 확인해 주세요.");
+                join.checkpw.value = "";
+                join.checkpw.focus();
+                return false;
+            }
+
+            if(email.value=="") {
+                alert("이메일을 입력해 주세요");
+                email.focus();
+                return false;
+            }
+
+            if(!check(re2, email, "적합하지 않은 이메일 형식입니다.")) {
+                return false;
+            }
+            
+            alert("회원가입이 완료되었습니다.");
+        }
+
+        function check(re, what, message) {
+            if(re.test(what.value)) {
+                return true;
+            }
+            alert(message);
+            what.value = "";
+            what.focus();
+        }
+        </Script>
+        <title>회원가입</title>
+        <style>
+            html{
+                background-color: rgb(177, 177, 177);
+            }
+            table{
+                width: 700px;
+                border: 2px solid black;
+                background-color: rgb(210, 219, 228);
+            }
+            th{
+                padding-top: 15px;
+                padding-bottom: 15px;
+                padding-left: 20px;
+                float: center;
+            }
+            td{
+                padding-top: 15px;
+                padding-bottom: 15px;
+                padding-left: 10px;
+            }
+            button{
+                height: 50px;
+                width: 100px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <form name="join" onsubmit="return validate();" action="login.html" method="post" enctype="text/plain">
+        <table>
+            <tr>
+                <th><strong>이름</strong></th>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <th><strong>성별</strong></th>
+                <td>남자 <input type="radio" name="radio"> 
+                    여자 <input type="radio" name="radio"></td>
+            </tr>
+            <tr>
+                 <th><strong>아이디</strong></th>
+                 <td><input type="text" id="id" maxlength="12"></td>
+            </tr>
+            <tr>
+                <th><strong>비밀번호</strong></th>
+                <td><input type="password" id="pw" maxlength="12"></td>
+            </tr>
+            <tr>
+                <th><strong>비밀번호 재확인</strong></th>
+                <td><input type="password" id="checkpw"></td>
+            </tr>
+            <tr>
+                <th><strong>비밀번호 힌트</strong></th>
+                <td><select>
+                    <option>질문을 선택하세요.</option>
+                    <option>나의 보물 제 1호는?</option>
+                    <option>기억에 남는 추억의 장소는?</option>
+                    <option>내가 다녔던 중학교의 이름은?</option>
+                    <option>내가 가장 좋아하는 음식은?</option>
+                </select></td>
+            </tr>
+            <tr>
+                 <th><strong>답변</strong></th>
+                 <td><input type="text"></td>
+            </tr>
+            <tr>
+                <th><strong>이메일</strong></th>
+                <td><input type="text" id="email"></td>
+            </tr>
+            <tr>
+                <th><strong>전화번호</strong></th>
+                <td><input type="tel"> - <input type="tel"> - <input type="tel"></td>
+            </tr>
+        </table>
+        <br><strong>개인정보수집동의</strong><input type="checkbox"><br><br>
+        <input type="submit" value="회원가입">
+        <input type="reset" value="다시적기">
+        <a href="login.html"><input type="button" value="로그인"></a>
+        </form>
+    </body>
+</html>
