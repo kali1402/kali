@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html oncontextmenu="return false" onselectstart="return false">
+<!-- oncontextmenu는 우클릭이 가능하게 할건지 안할껀지 선택 -->
+<!-- onselectstart는 드래그가 가능하게 할건지 안할껀지 선택 -->
 <head>
     <meta charset="utf-8">
     <title>계산기</title>
@@ -16,14 +18,17 @@
         td {
             text-align: center;
         }
+        input:focus {
+            outline: none;
+        }
     </style>
     <script>
         // 연산 이후 input창 초기화를 위한 flag변수 선언
         var flag="0";
         function Num(num) {   
             var objResult = document.form.calcResult;
-            var objOper = document.form.calcOper;
-            var objTemp = document.form.calcTemp;
+            var code = document.form.savecode;
+            var Num = document.form.savenum;
 
             var num1;
             var num2;
@@ -54,9 +59,9 @@
             else{       
                 // 결과버튼 선택 시
                 if(num=="="){
-                    num1 = parseInt(objTemp.value);
+                    num1 = parseInt(Num.value);
                     num2 = parseInt(objResult.value);
-                    switch (objOper.value) {
+                    switch (code.value) {
                     case '/':{
                         num3 = num1/num2;                   
                         break;
@@ -78,15 +83,15 @@
                         break;
                     }
                     objResult.value = num3;
-                    objTemp.value = "";
-                    objOper.value = "";
+                    Num.value = "";
+                    code.value = "";
                     flag="1";
                 }
                 // 초기화
                 else if(num=="AC"){
                     objResult.value = "0";
-                    objOper.value = "";
-                    objTemp.value = "";
+                    code.value = "";
+                    Num.value = "";
                 }
                 // 백스페이스
                 else if(num=="<"){
@@ -94,8 +99,8 @@
                 }           
                 // 연산자
                 else{
-                    objOper.value = num;
-                    objTemp.value = objResult.value;
+                    code.value = num;
+                    Num.value = objResult.value;
                     objResult.value = "0";
                 }
             }
@@ -108,7 +113,8 @@
             <br/><h1 align="center">계산기</h1>
             <table border="1" align="center">
             <tr>
-                <td colspan="5"><input type="text" value="0" readonly="readonly"></td>
+                <td colspan="5"><input type="text" name = "calcResult" id="idResult" value="0" readonly="readonly"></td>
+                    <!-- readonly는 input안에 텍스트를 못쓰게/바꾸지못하게 한다.-->
             </tr>
             <tr>
                 <td colspan="2" onclick="Num('AC')">AC</td>
@@ -139,8 +145,10 @@
                 <td onclick="Num('=')">=</td>
             </tr>
             </table>
-            <input type="hidden" name="calcTemp">
-            <input type="hidden" name="calcOper">
+            <input type="hidden" name="savenum">
+                <!-- 누른 숫자가 저장되는곳 -->
+            <input type="hidden" name="savecode">
+                <!-- 누른 부호가 저장되는곳 -->
         </div>
     </form>
 </body>
