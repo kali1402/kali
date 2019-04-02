@@ -53,11 +53,15 @@
             display.value += char;
             // display.value += char; 로 쓸 수도 있습니다.
             // input 태그의 값 뒤에 char 문자를 추가해 주는 역할을 합니다.
+            var display = document.getElementById('display');
+            var result = eval(display.value); // 식을 계산하고 result 변수에 저장합니다.
+            document.getElementById('result').value = result;
         }
         function calculate() {
             var display = document.getElementById('display');
             var result = eval(display.value); // 식을 계산하고 result 변수에 저장합니다.
             document.getElementById('result').value = result;
+            document.getElementById('display').value = "";
         }
         function reset() {
             document.getElementById('display').value = "0";
@@ -65,6 +69,8 @@
         }
         function backsp() {
             display.value = display.value.length != 1 ? display.value.substring(0, display.value.length-1) : "0";
+            if(display.value == "0")
+            document.getElementById('result').value = "0";
         }
     </script>
 </head>
