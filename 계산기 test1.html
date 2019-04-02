@@ -6,17 +6,27 @@
     <meta charset="utf-8">
     <title>계산기</title>
     <style>
+        h1 {
+            font-family: HY백송B;
+            font-size: 48px;
+        }
         table {
             border-collapse: collapse;
         }
-        #idResult {
-            width: 214px;
-            font-weight: bold;
-            text-align: right;
-            font-size: 14px
-        }
         td {
             text-align: center;
+            width: 100px;
+            height: 80px;
+            font-family: Hobo BT;
+            font-size: 30px;
+        }
+        .Result {
+            border: none;
+            font-weight: bold;
+            text-align: right;
+            font-family: Cooper Blk BT;
+            font-size: 35px;
+            padding-right: 15px;
         }
         input:focus {
             outline: none;
@@ -25,8 +35,8 @@
     <script>
         // 연산 이후 input창 초기화를 위한 flag변수 선언
         var flag="0";
-        function Num(num) {   
-            var objResult = document.form.calcResult;
+        function Num(num) {  
+            var Result = document.form.Result;
             var code = document.form.savecode;
             var Num = document.form.savenum;
 
@@ -36,72 +46,72 @@
 
             /* 숫자가 입력 되었을 때 */
 
-            if(isNaN(num) == false){
+            if(isNaN(num) == false || num == "."){
 
                 // 최초 입력시 입력받은 값 그대로 표시
-                if(objResult.value == "0")    {
-                    objResult.value = num;
+                if(Result.value == "0")    {
+                    Result.value = num;
                 }
 
                 // 결과창에 입력한 숫자가 있으면 붙이기
                 else{
                     if(flag=="1"){
-                        objResult.value = num;
+                        Result.value = num;
                         flag=0;
                     }else{
-                    objResult.value += num;
+                    Result.value += num;
                     }
                 }
             }
 
-        
+       
         /* 문자(연산키)가 입력 되었을 때 */
-            else{       
+            else{      
                 // 결과버튼 선택 시
                 if(num=="="){
                     num1 = parseInt(Num.value);
-                    num2 = parseInt(objResult.value);
+                    num2 = parseInt(Result.value);
                     switch (code.value) {
                     case '/':{
-                        num3 = num1/num2;                   
+                        num3 = num1/num2;                  
                         break;
                     };
                     case '*':{
-                        num3 = num1*num2;                     
+                        num3 = num1*num2;                    
                         break;
-                    };               
+                    };
                     case '-':{
-                        num3 = num1-num2;                   
+                        num3 = num1-num2;                  
                         break;
                     };
 
                     case '+':{
-                        num3 = num1+num2;                   
+                        num3 = num1+num2;                  
                         break;
-                    };               
+                    };
                     default:
                         break;
                     }
-                    objResult.value = num3;
+                    Result.value = num3;
                     Num.value = "";
                     code.value = "";
                     flag="1";
                 }
                 // 초기화
                 else if(num=="AC"){
-                    objResult.value = "0";
+                    Result.value = "0";
                     code.value = "";
                     Num.value = "";
                 }
                 // 백스페이스
                 else if(num=="<"){
-                    objResult.value = objResult.value.substring(0, objResult.value.length-1);
-                }           
+                    Result.value = Result.value.length != 1 ? Result.value.substring(0, Result.value.length-1) : "0";
+                }  
                 // 연산자
                 else{
                     code.value = num;
-                    Num.value = objResult.value;
-                    objResult.value = "0";
+                    Num.value = Result.value;
+                    Result.value = "0";
                 }
             }
         }
@@ -109,47 +119,45 @@
 </head>
 <body>
     <form name="form">
-        <div class="calc">
-            <br/><h1 align="center">계산기</h1>
-            <table border="1" align="center">
-            <tr>
-                <td colspan="5"><input type="text" name = "calcResult" id="idResult" value="0" readonly="readonly"></td>
-                    <!-- readonly는 input안에 텍스트를 못쓰게/바꾸지못하게 한다.-->
-            </tr>
-            <tr>
-                <td colspan="2" onclick="Num('AC')">AC</td>
-                <td onclick="Num('<')"><</td>
-                <td onclick="Num('/')">/</td>
-            </tr>
-            <tr>
-                <td onclick="Num('7')">7</td>
-                <td onclick="Num('8')">8</td>
-                <td onclick="Num('9')">9</td>
-                <td onclick="Num('*')">*</td>
-            </tr>
-            <tr>
-                <td onclick="Num('4')">4</td>
-                <td onclick="Num('5')">5</td>
-                <td onclick="Num('6')">6</td>
-                <td onclick="Num('-')">-</td>
-            </tr>
-            <tr>
-                <td onclick="Num('1')">1</td>
-                <td onclick="Num('2')">2</td>
-                <td onclick="Num('3')">3</td>
-                <td onclick="Num('+')">+</td>
-            </tr>
-            <tr>
-                <td colspan="2" onclick="Num('0')">0</td>
-                <td onclick="Num('.')">.</td>
-                <td onclick="Num('=')">=</td>
-            </tr>
-            </table>
-            <input type="hidden" name="savenum">
-                <!-- 누른 숫자가 저장되는곳 -->
-            <input type="hidden" name="savecode">
-                <!-- 누른 부호가 저장되는곳 -->
-        </div>
+        <br/><h1 align="center">계산기</h1>
+        <table border="3" align="center">
+        <tr>
+            <td colspan="4"><input class="Result" type="text" name="Result" value="0" readonly="readonly"></td>
+                <!-- readonly는 input안에 텍스트를 못쓰게/바꾸지못하게 한다.-->
+        </tr>
+        <tr>
+            <td colspan="2" onclick="Num('AC')">AC</td>
+            <td onclick="Num('<')"><</td>
+            <td onclick="Num('/')">/</td>
+        </tr>
+        <tr>
+            <td onclick="Num('7')">7</td>
+            <td onclick="Num('8')">8</td>
+            <td onclick="Num('9')">9</td>
+            <td onclick="Num('*')">*</td>
+        </tr>
+        <tr>
+            <td onclick="Num('4')">4</td>
+            <td onclick="Num('5')">5</td>
+            <td onclick="Num('6')">6</td>
+            <td onclick="Num('-')">-</td>
+        </tr>
+        <tr>
+            <td onclick="Num('1')">1</td>
+            <td onclick="Num('2')">2</td>
+            <td onclick="Num('3')">3</td>
+            <td onclick="Num('+')">+</td>
+        </tr>
+        <tr>
+            <td colspan="2" onclick="Num('0')">0</td>
+            <td onclick="Num('.')">.</td>
+            <td onclick="Num('=')">=</td>
+        </tr>
+        </table>
+        <input type="hidden" name="savenum">
+            <!-- 누른 숫자가 저장되는곳 -->
+        <input type="hidden" name="savecode">
+            <!-- 누른 부호가 저장되는곳 -->
     </form>
 </body>
 </html>

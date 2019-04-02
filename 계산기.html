@@ -1,19 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html oncontextmenu="return false" onselectstart="return false">
 <head>
     <meta charset="utf-8">
     <title>계산기</title>
     <style>
+        html {
+            background-color: aliceblue;
+        }
+        h1 {
+            font-family: HY백송B;
+            font-size: 48px;
+        }
         table {
             border-collapse: collapse;
         }
         td {
-            padding: 5px 10px;
             text-align: center;
+            width: 100px;
+            height: 70px;
+            font-family: Hobo BT;
+            font-size: 30px;
         }
-        input {
-            text-align: right;
+        .Result {
+            background-color: aliceblue;
             border: none;
+            font-family: Cooper Blk BT;
+            font-size: 20px;
+            padding-left: 200px;
+            color: grey;
+            text-align: right;
+        }
+        .Result1 {
+            background-color: aliceblue;
+            border: none;
+            font-weight: bold;
+            text-align: right;
+            font-family: Cooper Blk BT;
+            font-size: 35px;
+            padding-right: 20px;
+            color: cornflowerblue;
         }
         input:focus {
             outline: none;
@@ -22,8 +47,10 @@
     <script>
         function add(char) {
             var display = document.getElementById('display'); // 우리가 식을 입력할 input 태그를 불러옵니다.
+            if(display.value == "0")
+            display.value = "";
             // display.value는 input 태그 안에 들어 있는 값을 의미합니다.
-            display.value = display.value + char;
+            display.value += char;
             // display.value += char; 로 쓸 수도 있습니다.
             // input 태그의 값 뒤에 char 문자를 추가해 주는 역할을 합니다.
         }
@@ -33,54 +60,51 @@
             document.getElementById('result').value = result;
         }
         function reset() {
-            document.getElementById('display').value = "";
-            document.getElementById('result').value = "";
+            document.getElementById('display').value = "0";
+            document.getElementById('result').value = "0";
+        }
+        function backsp() {
+            display.value = display.value.length != 1 ? display.value.substring(0, display.value.length-1) : "0";
         }
     </script>
 </head>
 <body>
     <center>
-        <table border="1">
+        <br/><h1 align="center">계산기</h1>
+        <table border="3" align="center">
             <tr>
-                <td class="button2" colspan="4"><input type="text" id="display"></td>
+                <td colspan="4"><input type="text" class="Result" id="display" value="0"></td>
             </tr>
             <tr>
-                <td class="button2" colspan="4"><input type="text" id="result"></td>
+                <td colspan="4"><input type="text" class="Result1" id="result" value="0"></td>
             </tr>
             <tr>
-                <td><input class="button1" value="％"></td>
-                <td><input class="button1" value="√"></td>
-                <td><input class="button1" value="χ²"></td>
-                <td><input class="button1" value="¹/χ"></td>
+                <td colspan="2" onclick="reset()">AC</td>
+                <td onclick="backsp()"><</td>
+                <td onclick="add('/')">÷</td>
             </tr>
             <tr>
-                <td colspan="2" class="button1" onclick="reset()">AC</td>
-                <td class="button1" onclick="add('<-')"><-</td>
-                <td class="button1" onclick="add('/')">÷</td>
+                <td onclick="add(7)">7</td>
+                <td onclick="add(8)">8</td>
+                <td onclick="add(9)">9</td>
+                <td onclick="add('*')">×</td>
             </tr>
             <tr>
-                <td class="button" onclick="add(7)">7</td>
-                <td class="button" onclick="add(8)">8</td>
-                <td class="button" onclick="add(9)">9</td>
-                <td class="button" onclick="add('*')">×</td>
+                <td onclick="add(4)">4</td>
+                <td onclick="add(5)">5</td>
+                <td onclick="add(6)">6</td>
+                <td onclick="add('-')">-</td>
             </tr>
             <tr>
-                <td class="button" onclick="add(4)">4</td>
-                <td class="button" onclick="add(5)">5</td>
-                <td class="button" onclick="add(6)">6</td>
-                <td class="button" onclick="add('-')">-</td>
+                <td onclick="add(1)">1</td>
+                <td onclick="add(2)">2</td>
+                <td onclick="add(3)">3</td>
+                <td onclick="add('+')">+</td>
             </tr>
             <tr>
-                <td class="button" onclick="add(1)">1</td>
-                <td class="button" onclick="add(2)">2</td>
-                <td class="button" onclick="add(3)">3</td>
-                <td class="button" onclick="add('+')">+</td>
-            </tr>
-            <tr>
-                <td class="button" onclick="add('±')">±</td>
-                <td class="button" onclick="add(0)">02</td>
-                <td class="button" onclick="add('.')">.</td>
-                <td class="button" onclick="calculate()">=</td>
+                <td onclick="add(0)" colspan="2">0</td>
+                <td onclick="add('.')">.</td>
+                <td onclick="calculate()">=</td>
             </tr>
         </table>
     </center>
