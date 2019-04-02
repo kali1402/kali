@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>계산기</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        #idResult {
+            width: 214px; font-weight: bold;text-align: right; font-size: 14px
+        }
+    </style>
+    <script>
+        // 연산 이후 input창 초기화를 위한 flag변수 선언
+        var flag="0";
+        function Num(btnVal) {   
+            var objResult = document.form.calcResult;
+            var objOper = document.form.calcOper;
+            var objTemp = document.form.calcTemp;
+
+            var num1;
+            var num2;
+            var numResult;
+
+            /* 숫자가 입력 되었을 때 */
+
+            if(isNaN(btnVal) == false){
+
+                // 최초 입력시 입력받은 값 그대로 표시
+                if(objResult.value == "0")    {
+                    objResult.value = btnVal;
+                }
+
+                // 결과창에 입력한 숫자가 있으면 붙이기
+                else{
+                    if(flag=="1"){
+                        objResult.value = btnVal;
+                        flag=0;
+                    }else{
+                    objResult.value = objResult.value + btnVal;
+                    }
+                }
+            }
+
+        
+        /* 문자(연산키)가 입력 되었을 때 */
+            else{       
+                // 결과버튼 선택 시
+                if(btnVal=="eq"){
+                    num1 = parseInt(objTemp.value);
+                    num2 = parseInt(objResult.value);
+                    switch (objOper.value) {
+                    case 'di':{
+                        numResult = num1/num2;                   
+                        break;
+                    };
+                    case 'mt':{
+                        numResult = num1*num2;                     
+                        break;
+                    };               
+                    case 'mi':{
+                        numResult = num1-num2;                   
+                        break;
+                    };
+
+                    case 'pl':{
+                        numResult = num1+num2;                   
+                        break;
+                    };               
+                    default:
+                        break;
+                    }
+                    objResult.value = numResult;
+                    objTemp.value = "";
+                    objOper.value = "";
+                    flag="1";
+                }
+                // 초기화
+                else if(btnVal=="AC"){
+                    objResult.value = "0";
+                    objOper.value = "";
+                    objTemp.value = "";
+                }
+                // 백스페이스
+                else if(btnVal=="bk"){
+                    objResult.value = objResult.value.substring(0, objResult.value.length-1);
+                }           
+                // 연산자
+                else{
+                    objOper.value = btnVal;
+                    objTemp.value = objResult.value;
+                    objResult.value = "0";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="form">
+        <div class="calc">
+            <br/><h1 align="center">계산기 예제</h1>
+            <table border="1" align="center">
+            <tr>
+                <td colspan="5"><input type="text" name = "calcResult" id="idResult" value="0" readonly="readonly"></td>
+            </tr>
+            <tr>
+                <td colspan="2" onclick="Num('AC')">AC</td>
+                <td onclick="Num('bk')"><</td>
+                <td onclick="Num('di')">/</td>
+            </tr>
+            <tr>
+                <td onclick="Num('7')">7</td>
+                <td onclick="Num('8')">8</td>
+                <td onclick="Num('9')">9</td>
+                <td onclick="Num('mt')">*</td>
+            </tr>
+            <tr>
+                <td onclick="Num('4')">4</td>
+                <td onclick="Num('5')">5</td>
+                <td onclick="Num('6')">6</td>
+                <td onclick="Num('mi')">-</td>
+            </tr>
+            <tr>
+                <td onclick="Num('1')">1</td>
+                <td onclick="Num('2')">2</td>
+                <td onclick="Num('3')">3</td>
+                <td onclick="Num('pl')">+</td>
+            </tr>
+            <tr>
+                <td colspan="2" onclick="Num('0')">0</td>
+                <td onclick="Num('.')">.</td>
+                <td onclick="Num('eq')">=</td>
+            </tr>
+            </table>
+            <input type="hidden" name="calcTemp">
+            <input type="hidden" name="calcOper">
+        </div>
+    </form>
+</body>
+</html>
