@@ -42,18 +42,27 @@
         input:focus {
             outline: none;
         }
+        .key {
+            border: none;
+            font-size: 1px;
+            color: aliceblue;
+            background-color: aliceblue;
+        }
+        .text {
+            border: none;
+            font-size: 12px;
+            background-color: aliceblue;
+        }
     </style>
     <script>
         function key() {
             var key = document.getElementById('key');
             var display = document.getElementById('display');
-            display.value += key.value;
-
-            if(key.value == '<'){
-                display.value = display.value.length != 0 ? display.value.substring(0, display.value.length-1) : "0";
-                if(display.value == "0")
-                document.getElementById('result').value = "0";
+            if(display.value == "0"){
+                display.value = "";
             }
+            display.value += key.value;
+            document.getElementById("key").focus();
             if(key.value!=''){
                 key.value='';
             }
@@ -62,8 +71,10 @@
         }
         function add(char) {
             var display = document.getElementById('display'); // 우리가 식을 입력할 input 태그를 불러옵니다.
-            if(display.value == "0")
-            display.value = "";
+            document.getElementById("key").focus();
+            if(display.value == "0"){
+                display.value = "";
+            }
             // display.value는 input 태그 안에 들어 있는 값을 의미합니다.
             display.value += char;
             // display.value += char; 로 쓸 수도 있습니다.
@@ -74,14 +85,17 @@
         function calculate() {
             var display = document.getElementById('display');
             var result = eval(display.value); // 식을 계산하고 result 변수에 저장합니다.
+            document.getElementById("key").focus();
             document.getElementById('result').value = result;
             document.getElementById('display').value = "";
         }
         function reset() {
+            document.getElementById("key").focus();
             document.getElementById('display').value = "0";
             document.getElementById('result').value = "0";
         }
         function backsp() {
+            document.getElementById("key").focus();
             display.value = display.value.length != 1 ? display.value.substring(0, display.value.length-1) : "0";
             if(display.value == "0")
             document.getElementById('result').value = "0";
@@ -93,7 +107,7 @@
         <br/><h1 align="center">계산기</h1>
         <table border="3" align="center">
             <tr>
-                <td colspan="4"><input type="text" class="Result" id="display" value=""></td>
+                <td colspan="4"><input type="text" class="Result" id="display" value="0"></td>
             </tr>
             <tr>
                 <td colspan="4"><input type="text" class="Result1" id="result" value="0"></td>
@@ -127,7 +141,8 @@
                 <td onclick="calculate()">=</td>
             </tr>
         </table>
-        <input type="text" id="key" onkeyup="key();">
+        <p class="text">마우스랑 키보드로 입력 가능합니다.<br>처음은 키보드로 입력이 안됩니다.<br>키보드로 사용한 것 : 숫자 , 사칙연산 , % , .</p>
+        <input type="text" class="key" id="key" onkeyup="key();">
     </center>
 </body>
 </html>
