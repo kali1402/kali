@@ -26,9 +26,8 @@
             border: none;
             font-family: Cooper Blk BT;
             font-size: 20px;
-            padding-left: 200px;
             color: grey;
-            text-align: right;
+            text-align: left;
         }
         .Result1 {
             background-color: aliceblue;
@@ -45,6 +44,22 @@
         }
     </style>
     <script>
+        function key() {
+            var key = document.getElementById('key');
+            var display = document.getElementById('display');
+            display.value += key.value;
+
+            if(key.value == '<'){
+                display.value = display.value.length != 0 ? display.value.substring(0, display.value.length-1) : "0";
+                if(display.value == "0")
+                document.getElementById('result').value = "0";
+            }
+            if(key.value!=''){
+                key.value='';
+            }
+            var result = eval(display.value); // 식을 계산하고 result 변수에 저장합니다.
+            document.getElementById('result').value = result;
+        }
         function add(char) {
             var display = document.getElementById('display'); // 우리가 식을 입력할 input 태그를 불러옵니다.
             if(display.value == "0")
@@ -53,7 +68,6 @@
             display.value += char;
             // display.value += char; 로 쓸 수도 있습니다.
             // input 태그의 값 뒤에 char 문자를 추가해 주는 역할을 합니다.
-            var display = document.getElementById('display');
             var result = eval(display.value); // 식을 계산하고 result 변수에 저장합니다.
             document.getElementById('result').value = result;
         }
@@ -79,7 +93,7 @@
         <br/><h1 align="center">계산기</h1>
         <table border="3" align="center">
             <tr>
-                <td colspan="4"><input type="text" class="Result" id="display" value="0"></td>
+                <td colspan="4"><input type="text" class="Result" id="display" value=""></td>
             </tr>
             <tr>
                 <td colspan="4"><input type="text" class="Result1" id="result" value="0"></td>
@@ -113,6 +127,7 @@
                 <td onclick="calculate()">=</td>
             </tr>
         </table>
+        <input type="text" id="key" onkeyup="key();">
     </center>
 </body>
 </html>
