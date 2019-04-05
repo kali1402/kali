@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false" onselectstart="return false">
+<head>
+    <meta charset="utf-8">
+    <title>자바스크립트 연습</title>
+    <style>
+        .key
+        {
+            border: none;
+            color: white;
+        }
+        .display
+        {
+            background-color:#222;
+            width:300px;
+            position:relative;
+            left:15px;
+            top:20px;
+            height:44px;
+        }
+        .display input
+        {
+            padding-right: 10px;
+            width:284px;
+            position:relative;
+            left:2px;
+            top:2px;
+            height:35px;
+            color:black;
+            background-color:#bccd95;
+            font-size:21px;
+            text-align:right;
+        } 
+        .box1
+        {
+            background-color: dimgrey;
+            height:500px;
+            width:400px;
+            border-radius:10px;
+            top:80px;
+            left:40%;
+        } 
+        .box
+        {
+            padding-top: 8px;
+            padding-right: 6px;
+            padding-left: 2px;
+            padding-bottom: 3px;
+            background-color:#303030;
+            height:500px;
+            width:400px;
+            border-radius:18px;
+            top:80px;
+            left:40%;
+        } 
+        .keys
+        {
+            position:relative;
+            top:15px;
+        }
+        .button
+        {
+            font-size:24px;
+            width:40px;
+            height:30px;
+            border:none;
+            border-radius:8px;
+            margin-left:17px;
+            cursor:pointer;
+            border-top:2px solid transparent;
+        }
+        .button.gray
+        {
+            color:black;
+            background-color:skyblue;
+            border-bottom:black 2px solid;
+            border-top:2px skyblue solid;
+            width: 60px;
+            height: 60px;
+        }
+        .button.gray1
+        {
+            color:black;
+            background-color:skyblue;
+            border-bottom:black 2px solid;
+            border-top:2px skyblue solid;
+            width: 140px;
+            height: 60px;
+        }
+        .button.pink
+        {
+            color:black;
+            background-color:#ff4561;
+            border-bottom:black 2px solid;
+            width: 60px;
+            height: 60px;
+        }
+        .button.black
+        {
+            color:black;
+            background-color:303030;
+            border-bottom:black 2px solid;
+            border-top:2px 303030 solid;
+            width: 60px;
+            height: 60px;
+        }
+        .button.black1
+        {
+            color:black;
+            background-color:303030;
+            border-bottom:black 2px solid;
+            border-top:2px 303030 solid;
+            width: 140px;
+            height: 60px;
+        }
+        .button.orange
+        {
+            color:black;
+            background-color: #FF9933;
+            border-bottom:black 2px solid;
+            border-top:2px  #FF9933 solid;
+            width: 60px;
+            height: 60px;
+        }
+        .gray:active
+        {
+            border-top:black 2px solid;
+            border-bottom:2px #6f6f6f solid;
+        }
+        .gray1:active
+        {
+            border-top:black 2px solid;
+            border-bottom:2px #6f6f6f solid;
+        }
+        .pink:active
+        {
+            border-top:black 2px solid;
+            border-bottom:#ff4561 2px solid;
+        }
+        .black:active
+        {
+            border-top:black 2px solid;
+            border-bottom:#303030 2px solid;
+        }
+        .black1:active
+        {
+            border-top:black 2px solid;
+            border-bottom:#303030 2px solid;
+        }
+        .orange:active
+        {
+            border-top:black 2px solid;
+            border-bottom: #FF9933 2px solid;
+        }
+        p
+        {
+            font-size: 40px;
+            font-family: 굴림;
+        }
+        input:focus {
+            outline: none;
+        }
+    </style>
+    <script>
+    function key() {
+        var key = document.getElementById("key");
+        var display = document.getElementById("display");
+
+        if(display.value == "0") {
+            display.value = "";
+        }
+
+        if(display.value == "-") {
+            display.value = "";
+        }
+
+        if(key.value == "=") {
+            document.getElementById('result').value = eval(display.value);
+            display.value = "-";
+        }
+
+        display.value += key.value;
+
+        if(key.value == "=") {
+            display.value = display.value.length != 1 ? display.value.substring(0, display.value.length-1) : "0";
+        }
+
+        if(key.value == "<") {
+            display.value = display.value.length != 1 ? display.value.substring(0, display.value.length-2) : "0";
+            if(display.value == "") {
+                display.value = "0";
+            }
+        }
+
+        if(key.value == "a") {
+            display.value = "";
+            document.getElementById('result').value = "";
+        }
+
+        if(key.value != "") {
+            key.value = "";
+        }
+
+        var result = eval(display.value);
+        document.getElementById('result').value = result;
+    }
+
+    function num(num) {
+        var display = document.getElementById("display");
+
+        if(display.value == "0") {
+            display.value = "";
+        }
+
+        if(display.value == "-") {
+            display.value = "";
+        }
+
+        if(num == "=") {
+            document.getElementById("key").focus();
+            document.getElementById('result').value = eval(display.value);
+            display.value = "-";
+        }
+
+        display.value += num;
+
+        if(num == "=") {
+            document.getElementById("key").focus();
+            display.value = display.value.length != 1 ? display.value.substring(0, display.value.length-1) : "0";
+        }
+
+        if(num == "<") {
+            document.getElementById("key").focus();
+            display.value = display.value.length != 1 ? display.value.substring(0, display.value.length-2) : "0";
+            if(display.value == "") {
+                document.getElementById("key").focus();
+                display.value = "0";
+            }
+        }
+
+        if(num == "a") {
+            document.getElementById("key").focus();
+            display.value = "0";
+            document.getElementById('result').value = "0";
+        }
+        
+        document.getElementById("key").focus();
+        var result = eval(display.value);
+        document.getElementById('result').value = result;
+    }
+    </script>
+</head>
+<body>
+    <center>
+        <p>계산기</p>
+        <div class="box">
+            <div class="box1">
+                <table>
+                    <tr>
+                        <td colspan="4"><div class="display"><input type="text" id="display" value="0"  disabled></div></td>
+                    </tr>
+                    <tr>
+                            <td colspan="4"><div class="display"><input type="text" id="result" value="0"  disabled></div><br><br></td>
+                    </tr>
+                    <tr>
+                        <td class="num" onclick="num('a')" colspan="2"><input type="button" class="button gray1" value="AC"></td>
+                        <td class="num" onclick="num('<')"><input type="button" class="button gray" value="<"></td>
+                        <td class="num" onclick="num('/')"><input type="button" class="button pink" value="÷"></td>
+                    </tr>
+                    <tr>
+                        <td class="num" onclick="num('7')"><input type="button" class="button black" value="7"></td>
+                        <td class="num" onclick="num('8')"><input type="button" class="button black" value="8"></td>
+                        <td class="num" onclick="num('9')"><input type="button" class="button black" value="9"></td>
+                        <td class="num" onclick="num('*')"><input type="button" class="button pink" value="×"></td>
+                    </tr>
+                    <tr>
+                        <td class="num" onclick="num('4')"><input type="button" class="button black" value="4"></td>
+                        <td class="num" onclick="num('5')"><input type="button" class="button black" value="5"></td>
+                        <td class="num" onclick="num('6')"><input type="button" class="button black" value="6"></td>
+                        <td class="num" onclick="num('-')"><input type="button" class="button pink" value="-"></td>
+                    </tr>
+                    <tr>
+                        <td class="num" onclick="num('1')"><input type="button" class="button black" value="1"></td>
+                        <td class="num" onclick="num('2')"><input type="button" class="button black" value="2"></td>
+                        <td class="num" onclick="num('3')"><input type="button" class="button black" value="3"></td>
+                        <td class="num" onclick="num('+')"><input type="button" class="button pink" value="+"></td>
+                    </tr>
+                    <tr>
+                        <td class="num" onclick="num('0')" colspan="2"><input type="button" class="button black1" value="0"></td>
+                        <td class="num" onclick="num('.')"><input type="button" class="button black" value="ㆍ"></td>
+                        <td class="num" onclick="num('=')"><input type="button" class="button orange" value="="></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <input class="key" type="text" id="key" onkeyup="key();">
+    </center>
+</body>
+</html>
