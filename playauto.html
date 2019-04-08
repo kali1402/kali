@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
     var str =
@@ -16,17 +14,7 @@
             <li><img src="www.playauto.co.kr/img/sender_post.png" alt=""></li>
         </ul>
     </div>`;
-    var pattern = /([w].*[\$g])/g;
-    var result = pattern.exec(str);
-    alert(result);
-    /*
-    출력되어야하는값
-    www.playauto.co.kr/img/sender_daehan.png
-    www.playauto.co.kr/img/sender_hanjin2.png
-    www.playauto.co.kr/img/sender_lotte2.png
-    www.playauto.co.kr/img/sender_logen.png
-    www.playauto.co.kr/img/sender_post.png
-    */
+    alert(str.match(/([w].*[\$g])/g));
     </script>
 </head>
 <body>
