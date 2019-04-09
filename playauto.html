@@ -3,21 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script>
-    var str =
-    `<div id="tab4" class="tab_content">
-        <ul class="brand_list">
-            <li><img src="www.playauto.co.kr/img/sender_daehan.png" alt=""></li>
-            <li><img src="www.playauto.co.kr/img/sender_hanjin2.png" alt=""></li>
-            <li><img src="www.playauto.co.kr/img/sender_lotte2.png" alt=""></li>
-            <li><img src="www.playauto.co.kr/img/sender_logen.png" alt=""></li>
-            <li><img src="www.playauto.co.kr/img/sender_post.png" alt=""></li>
-        </ul>
-    </div>`;
-    alert(str.match(/([w].*[\$g])/g));
-    </script>
+    <style>
+        body{
+            padding: 100px;
+        }
+    </style>
 </head>
 <body>
-    
+    <center>
+        <table border="1">
+            <tr>
+                <td>대한택배</td>
+                <td><img src="" id="img1"></td>
+            </tr>
+            <tr>
+                <td>한진택배</td>
+                <td><img src="" id="img2"></td>
+            </tr>
+            <tr>
+                <td>롯데택배</td>
+                <td><img src="" id="img3"></td>
+            </tr>
+            <tr>
+                <td>로젠택배</td>
+                <td><img src="" id="img4"></td>
+            </tr>
+            <tr>
+                <td>우체국택배</td>
+                <td><img src="" id="img5"></td>
+            </tr>
+        </table>
+    </center>
+    <script>
+        var str =
+        `<div id="tab4" class="tab_content">
+            <ul class="brand_list">
+                <li><img src="www.playauto.co.kr/img/sender_daehan.png" alt=""></li>
+                <li><img src="www.playauto.co.kr/img/sender_hanjin2.png" alt=""></li>
+                <li><img src="www.playauto.co.kr/img/sender_lotte2.png" alt=""></li>
+                <li><img src="www.playauto.co.kr/img/sender_logen.png" alt=""></li>
+                <li><img src="www.playauto.co.kr/img/sender_post.png" alt=""></li>
+            </ul>
+        </div>`;
+        var img = 0;
+        var pattern = /([w].*[\$g])/g; // /"[^"]*"/
+        while((result = pattern.exec(str))!=null)
+        {
+            img++;
+            document.getElementById("img"+img).src = "https://" + result[1];
+        }
+    </script>
 </body>
 </html>

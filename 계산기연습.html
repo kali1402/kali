@@ -4,20 +4,59 @@
     <meta charset="utf-8">
     <title> . </title>
     <script>
-        function num(){
-            var num = document.getElementById("num");
-            var spattern = /\+/;
-            var apattern = /\*/;
-            if(spattern.test(num.value)) {
-                alert("2");
+        // /^[\d]*[\+\-\/\*](\d*$)/g;
+        function num(num) {
+            var display = document.getElementById("display");
+            var front1 = /^[\d]*/;
+            var back1 = /\d*$/;
+            var pattern1 = /[\+\-\/\*]/;
+            if(display.value == "0") {
+                display.value = "";
             }
-            if(apattern.test(num.value)) {
-                alert("1");
-            }
+            display.value += num;
+            var front = front1.exec(display.value);
+            var pattern = pattern1.exec(display.value);
+            var back = back1.exec(display.value);
+            alert(front+pattern+back);
         }
     </script>
 </head>
 <body>
-    <input type="text" id="num" value="" onkeyup="num()">
+    <table>
+        <tr>
+            <td colspan="4"><div><input type="text" id="display" value="0"  disabled></div></td>
+        </tr>
+        <tr>
+                <td colspan="4"><div><input type="text" id="result" value="0"  disabled></div><br><br></td>
+        </tr>
+        <tr>
+            <td onclick="num('a')" colspan="2"><input type="button" value="AC"></td>
+            <td onclick="num('<')"><input type="button" value="<"></td>
+            <td onclick="num('/')"><input type="button" value="÷"></td>
+        </tr>
+        <tr>
+            <td onclick="num('7')"><input type="button" value="7"></td>
+            <td onclick="num('8')"><input type="button" value="8"></td>
+            <td onclick="num('9')"><input type="button" value="9"></td>
+            <td onclick="num('*')"><input type="button" value="×"></td>
+        </tr>
+        <tr>
+            <td onclick="num('4')"><input type="button" value="4"></td>
+            <td onclick="num('5')"><input type="button" value="5"></td>
+            <td onclick="num('6')"><input type="button" value="6"></td>
+            <td onclick="num('-')"><input type="button" value="-"></td>
+        </tr>
+        <tr>
+            <td onclick="num('1')"><input type="button" value="1"></td>
+            <td onclick="num('2')"><input type="button" value="2"></td>
+            <td onclick="num('3')"><input type="button" value="3"></td>
+            <td onclick="num('+')"><input type="button" value="+"></td>
+        </tr>
+        <tr>
+            <td onclick="num('0')" colspan="2"><input type="button" value="0"></td>
+            <td onclick="num('.')"><input type="button" value="ㆍ"></td>
+            <td onclick="num('=')"><input type="button" value="="></td>
+        </tr>
+    </table>
 </body>
 </html>
