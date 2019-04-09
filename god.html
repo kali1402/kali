@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        td{
+            text-align: center;
+            padding: 10px;
+        }
+        th{
+            padding-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <th>감독</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><img src="" id="img1"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>김용화</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <th>주연</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><img src="" id="img2"></td>
+                <td><img src="" id="img3"></td>
+                <td><img src="" id="img4"></td>
+                <td><img src="" id="img5"></td>
+                <td><img src="" id="img6"></td>
+            </tr>
+            <tr>
+                <td>하정우 - 강림 역</td>
+                <td>주지훈 - 해원맥 역</td>
+                <td>김향기 - 덕춘 역</td>
+                <td>마동석 - 성주신 역</td>
+                <td>김동욱 - 수홍 역</td>
+            </tr>
+        </table>
+    </center>
+    <script>
+        // https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201803%2F2018030821300648-4393927.jpg&type=u111_139&quality=95
+        // https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201703%2F20170309160737361.jpg&type=u111_139&quality=95
+        // https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201502%2F20150204115955124-6648994.jpg&type=u111_139&quality=95
+        // https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201603%2F20160318132802865-5073725.jpg&type=u111_139&quality=95
+        // https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201710%2F2017102414073587.jpg&type=u111_139&quality=95
+        // https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201611%2F20161121181615139.jpg&type=u111_139&quality=95
+        var str =  `<div class="obj_section">
+                    <div class="people">
+                    <div class="title_area">
+                    <h4 class="h_people"><strong class="blind">배우/제작진</strong></h4>
+                    </div>
+                    <ul>
+                    <li>
+                    <a href="/movie/bi/pi/basic.nhn?code=11476" title="김용화" class="thumb_people">
+                    <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201803%2F2018030821300648-4393927.jpg&type=u111_139&quality=95" width="111" height="139" alt="김용화" onerror="src='https://ssl.pstatic.net/static/movie/2012/06/dft_img111x139.png'"/>
+                    </a><!-- N=a:mca.img -->
+                    <a href="/movie/bi/pi/basic.nhn?code=11476" title="김용화" class="tx_people">김용화</a><!-- N=a:mca.name -->
+                    <dl class="staff">
+                    <dt class="staff_dir">감독</dt>
+                    </dl>
+                    </li>
+                    <li>
+                    <a href="/movie/bi/pi/basic.nhn?code=59818" title="하정우" class="thumb_people">
+                    <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201703%2F20170309160737361.jpg&type=u111_139&quality=95" width="111" height="139" alt="하정우" onerror="src='https://ssl.pstatic.net/static/movie/2012/06/dft_img111x139.png'"/>
+                    </a><!-- N=a:mca.img -->
+                    <a href="/movie/bi/pi/basic.nhn?code=59818" title="하정우" class="tx_people">하정우</a><!-- N=a:mca.name -->
+                    <dl class="staff">
+                    <dt class="staff_main">주연</dt>
+                    <dd>강림 역</dd>
+                    </dl>
+                    </li>
+                    <li>
+                    <a href="/movie/bi/pi/basic.nhn?code=78806" title="주지훈" class="thumb_people">
+                    <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201502%2F20150204115955124-6648994.jpg&type=u111_139&quality=95" width="111" height="139" alt="주지훈" onerror="src='https://ssl.pstatic.net/static/movie/2012/06/dft_img111x139.png'"/>
+                    </a><!-- N=a:mca.img -->
+                    <a href="/movie/bi/pi/basic.nhn?code=78806" title="주지훈" class="tx_people">주지훈</a><!-- N=a:mca.name -->
+                    <dl class="staff">
+                    <dt class="staff_main">주연</dt>
+                    <dd>해원맥 역</dd>
+                    </dl>
+                    </li>
+                    <li>
+                    <a href="/movie/bi/pi/basic.nhn?code=93005" title="김향기" class="thumb_people">
+                    <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201603%2F20160318132802865-5073725.jpg&type=u111_139&quality=95" width="111" height="139" alt="김향기" onerror="src='https://ssl.pstatic.net/static/movie/2012/06/dft_img111x139.png'"/>
+                    </a><!-- N=a:mca.img -->
+                    <a href="/movie/bi/pi/basic.nhn?code=93005" title="김향기" class="tx_people">김향기</a><!-- N=a:mca.name -->
+                    <dl class="staff">
+                    <dt class="staff_main">주연</dt>
+                    <dd>덕춘 역</dd>
+                    </dl>
+                    </li>
+                    <li>
+                    <a href="/movie/bi/pi/basic.nhn?code=43284" title="마동석" class="thumb_people">
+                    <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201710%2F2017102414073587.jpg&type=u111_139&quality=95" width="111" height="139" alt="마동석" onerror="src='https://ssl.pstatic.net/static/movie/2012/06/dft_img111x139.png'"/>
+                    </a><!-- N=a:mca.img -->
+                    <a href="/movie/bi/pi/basic.nhn?code=43284" title="마동석" class="tx_people">마동석</a><!-- N=a:mca.name -->
+                    <dl class="staff">
+                    <dt class="staff_main">주연</dt>
+                    <dd>성주신 역</dd>
+                    </dl>
+                    </li>
+                    <li>
+                    <a href="/movie/bi/pi/basic.nhn?code=77449" title="김동욱" class="thumb_people">
+                    <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201611%2F20161121181615139.jpg&type=u111_139&quality=95" width="111" height="139" alt="김동욱" onerror="src='https://ssl.pstatic.net/static/movie/2012/06/dft_img111x139.png'"/>
+                    </a><!-- N=a:mca.img -->
+                    <a href="/movie/bi/pi/basic.nhn?code=77449" title="김동욱" class="tx_people">김동욱</a><!-- N=a:mca.name -->
+                    <dl class="staff">
+                    <dt class="staff_main">주연</dt>
+                    <dd>수홍 역</dd>
+                    </dl>
+                    </li>
+                    </ul>
+                    <div class="title_area type_btn_box">
+                    <a href="/movie/bi/mi/detail.nhn?code=167697#tab">
+                    <span class="more"><span class="blind">더보기</span></span>
+                    </a><!-- N=a:mca.more -->
+                    </div>
+                    </div>
+                    </div>`
+        var pattern = /https:\/\/search.[\"']?([^>\"']+)/g;
+        var img = 0;
+        while((result = pattern.exec(str))!=null)
+        {
+            console.log(result);
+            img++;
+            document.getElementById("img"+img).src = result[0];
+        }
+    </script>
+</body>
+</html>

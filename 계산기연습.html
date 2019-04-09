@@ -7,7 +7,7 @@
         // /^[\d]*[\+\-\/\*](\d*$)/g;
         function num(num) {
             var display = document.getElementById("display");
-            var front1 = /^[\d]*/;
+            var front1 = /^[\d.]*/;
             var back1 = /\d*$/;
             var pattern1 = /[\+\-\/\*]/;
             if(display.value == "0") {
@@ -17,7 +17,7 @@
             var front = front1.exec(display.value);
             var pattern = pattern1.exec(display.value);
             var back = back1.exec(display.value);
-            alert(front+pattern+back);
+            alert([front+pattern+back]);
         }
     </script>
 </head>
