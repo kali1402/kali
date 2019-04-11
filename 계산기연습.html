@@ -4,20 +4,50 @@
     <meta charset="utf-8">
     <title> . </title>
     <script>
+        var result = 0;
         // /^[\d]*[\+\-\/\*](\d*$)/g;
         function num(num) {
             var display = document.getElementById("display");
-            var front1 = /^[\d.]*/;
+            var front1 = /^[\d]*/;
             var back1 = /\d*$/;
             var pattern1 = /[\+\-\/\*]/;
+
             if(display.value == "0") {
                 display.value = "";
             }
+
             display.value += num;
+
             var front = front1.exec(display.value);
             var pattern = pattern1.exec(display.value);
             var back = back1.exec(display.value);
-            alert([front+pattern+back]);
+            front = parseFloat(front);
+            back = parseFloat(back);
+            
+            if(pattern=="+")
+            {
+                result = front+back;
+            }
+
+            if(pattern=="-")
+            {
+                result = front-back;
+            }
+
+            if(pattern=="*")
+            {
+                result = front*back;
+            }
+
+            if(pattern=="/")
+            {
+                result = front/back;
+            }
+                
+        }
+        function print() {
+            console.log(result);
+            document.getElementById('result').value = result;
         }
     </script>
 </head>
@@ -55,7 +85,7 @@
         <tr>
             <td onclick="num('0')" colspan="2"><input type="button" value="0"></td>
             <td onclick="num('.')"><input type="button" value="ㆍ"></td>
-            <td onclick="num('=')"><input type="button" value="="></td>
+            <td onclick="print('=')"><input type="button" value="="></td>
         </tr>
     </table>
 </body>

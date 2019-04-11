@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html oncontextmenu="return false" onselectstart="return false">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
+        input{
+            text-align: center;
+            border: none;
+            background-color: white;
+        }
         td{
             text-align: center;
             padding: 10px;
         }
         th{
             padding-top: 40px;
+        }
+        input:focus {
+            outline: none;
         }
     </style>
 </head>
@@ -19,45 +27,56 @@
             <tr>
                 <td></td>
                 <td></td>
-                <th>감독</th>
+                <th><input type="text" id="title1" value="" disabled></th>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
-                <td><img src="" id="img1"></td>
+                <td><a href="" id="link1"><img src="" id="img1"></a></td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
-                <td>김용화</td>
+                <td><input type="text" id="name1" value="" disabled></td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
-                <th>주연</th>
+                <th><input type="text" id="title2" value="" disabled></th>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td><img src="" id="img2"></td>
-                <td><img src="" id="img3"></td>
-                <td><img src="" id="img4"></td>
-                <td><img src="" id="img5"></td>
-                <td><img src="" id="img6"></td>
+                <td><a href="" id="link2"><img src="" id="img2"></a></td>
+                <td><a href="" id="link3"><img src="" id="img3"></a></td>
+                <td><a href="" id="link4"><img src="" id="img4"></a></td>
+                <td><a href="" id="link5"><img src="" id="img5"></a></td>
+                <td><a href="" id="link6"><img src="" id="img6"></a></td>
             </tr>
             <tr>
-                <td>하정우 - 강림 역</td>
-                <td>주지훈 - 해원맥 역</td>
-                <td>김향기 - 덕춘 역</td>
-                <td>마동석 - 성주신 역</td>
-                <td>김동욱 - 수홍 역</td>
+                <td><input type="text" id="name2" value="" disabled></td>
+                <td><input type="text" id="name3" value="" disabled></td>
+                <td><input type="text" id="name4" value="" disabled></td>
+                <td><input type="text" id="name5" value="" disabled></td>
+                <td><input type="text" id="name6" value="" disabled></td>
             </tr>
+            <tr>
+                <td><input type="text" id="text1" value="" disabled></td>
+                <td><input type="text" id="text2" value="" disabled></td>
+                <td><input type="text" id="text3" value="" disabled></td>
+                <td><input type="text" id="text4" value="" disabled></td>
+                <td><input type="text" id="text5" value="" disabled></td>
+            </tr>
+            <th><input type="hidden" id="title3" value="" disabled></th>
+            <th><input type="hidden" id="title4" value="" disabled></th>
+            <th><input type="hidden" id="title5" value="" disabled></th>
+            <th><input type="hidden" id="title6" value="" disabled></th>
         </table>
     </center>
     <script>
@@ -74,7 +93,6 @@
                     </div>
                     <ul>
                     <li>
-                    <a href="/movie/bi/pi/basic.nhn?code=11476" title="김용화" class="thumb_people">
                     <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201803%2F2018030821300648-4393927.jpg&type=u111_139&quality=95" width="111" height="139" alt="김용화" onerror="src='https://ssl.pstatic.net/static/movie/2012/06/dft_img111x139.png'"/>
                     </a><!-- N=a:mca.img -->
                     <a href="/movie/bi/pi/basic.nhn?code=11476" title="김용화" class="tx_people">김용화</a><!-- N=a:mca.name -->
@@ -83,7 +101,6 @@
                     </dl>
                     </li>
                     <li>
-                    <a href="/movie/bi/pi/basic.nhn?code=59818" title="하정우" class="thumb_people">
                     <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201703%2F20170309160737361.jpg&type=u111_139&quality=95" width="111" height="139" alt="하정우" onerror="src='https://ssl.pstatic.net/static/movie/2012/06/dft_img111x139.png'"/>
                     </a><!-- N=a:mca.img -->
                     <a href="/movie/bi/pi/basic.nhn?code=59818" title="하정우" class="tx_people">하정우</a><!-- N=a:mca.name -->
@@ -93,7 +110,6 @@
                     </dl>
                     </li>
                     <li>
-                    <a href="/movie/bi/pi/basic.nhn?code=78806" title="주지훈" class="thumb_people">
                     <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201502%2F20150204115955124-6648994.jpg&type=u111_139&quality=95" width="111" height="139" alt="주지훈" onerror="src='https://ssl.pstatic.net/static/movie/2012/06/dft_img111x139.png'"/>
                     </a><!-- N=a:mca.img -->
                     <a href="/movie/bi/pi/basic.nhn?code=78806" title="주지훈" class="tx_people">주지훈</a><!-- N=a:mca.name -->
@@ -103,7 +119,6 @@
                     </dl>
                     </li>
                     <li>
-                    <a href="/movie/bi/pi/basic.nhn?code=93005" title="김향기" class="thumb_people">
                     <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201603%2F20160318132802865-5073725.jpg&type=u111_139&quality=95" width="111" height="139" alt="김향기" onerror="src='https://ssl.pstatic.net/static/movie/2012/06/dft_img111x139.png'"/>
                     </a><!-- N=a:mca.img -->
                     <a href="/movie/bi/pi/basic.nhn?code=93005" title="김향기" class="tx_people">김향기</a><!-- N=a:mca.name -->
@@ -113,7 +128,6 @@
                     </dl>
                     </li>
                     <li>
-                    <a href="/movie/bi/pi/basic.nhn?code=43284" title="마동석" class="thumb_people">
                     <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201710%2F2017102414073587.jpg&type=u111_139&quality=95" width="111" height="139" alt="마동석" onerror="src='https://ssl.pstatic.net/static/movie/2012/06/dft_img111x139.png'"/>
                     </a><!-- N=a:mca.img -->
                     <a href="/movie/bi/pi/basic.nhn?code=43284" title="마동석" class="tx_people">마동석</a><!-- N=a:mca.name -->
@@ -123,7 +137,6 @@
                     </dl>
                     </li>
                     <li>
-                    <a href="/movie/bi/pi/basic.nhn?code=77449" title="김동욱" class="thumb_people">
                     <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201611%2F20161121181615139.jpg&type=u111_139&quality=95" width="111" height="139" alt="김동욱" onerror="src='https://ssl.pstatic.net/static/movie/2012/06/dft_img111x139.png'"/>
                     </a><!-- N=a:mca.img -->
                     <a href="/movie/bi/pi/basic.nhn?code=77449" title="김동욱" class="tx_people">김동욱</a><!-- N=a:mca.name -->
@@ -133,11 +146,6 @@
                     </dl>
                     </li>
                     </ul>
-                    <div class="title_area type_btn_box">
-                    <a href="/movie/bi/mi/detail.nhn?code=167697#tab">
-                    <span class="more"><span class="blind">더보기</span></span>
-                    </a><!-- N=a:mca.more -->
-                    </div>
                     </div>
                     </div>`
         var pattern = /https:\/\/search.[\"']?([^>\"']+)/g;
@@ -147,6 +155,30 @@
             console.log(result);
             img++;
             document.getElementById("img"+img).src = result[0];
+        }
+        var pattern1 = /\/movie\/bi\/pi\/basic.nhn\?code=[\d]*/g;
+        var link = 0;
+        while((result1 = pattern1.exec(str))!=null)
+        {
+            console.log(result1);
+            link++;
+            document.getElementById("link"+link).href = "https://movie.naver.com" + result1;
+        }
+        var pattern2 = />[가-힣]{3}</g;
+        var name = 0;
+        while((result2 = pattern2.exec(str))!=null)
+        {
+            console.log(result2);
+            name++;
+            document.getElementById("name"+name).value = result2;
+        }
+        var pattern3 = />[가-힣]{2}</g;
+        var title = 0;
+        while((result3 = pattern3.exec(str))!=null)
+        {
+            console.log(result3);
+            title++;
+            document.getElementById("title"+title).value = result3;
         }
     </script>
 </body>
