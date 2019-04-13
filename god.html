@@ -20,6 +20,200 @@
             outline: none;
         }
     </style>
+    <script>
+        function gam() {
+            var pattern = /https:\/\/search.[\"']?([^>\"']+)/g;
+            var num = 0;
+            while((result = pattern.exec(str))!=null)
+            {
+                num++;
+                if(num==1)
+                {
+                    document.getElementById("newimg").src = result[0];
+                }
+            }
+            var pattern1 = /\/movie\/bi\/pi\/basic.nhn\?code=[\d]*/g;
+            var num1 = 0;
+            while((result1 = pattern1.exec(str))!=null)
+            {
+                num1++;
+                if(num1==1)
+                {
+                    document.getElementById("newlink").href = "https://movie.naver.com" + result1;
+                }
+            }
+            var pattern2 = />[가-힣]{3}</g;
+            var num2 = 0;
+            while((result2 = pattern2.exec(str))!=null)
+            {
+                num2++;
+                if(num2==1)
+                {
+                    document.getElementById("newname").value = result2;
+                }
+            }
+        }
+        function ju() {
+            var pattern = /https:\/\/search.[\"']?([^>\"']+)/g;
+            var num = 0;
+            while((result = pattern.exec(str))!=null)
+            {
+                num++;
+                if(num==2)
+                {
+                    document.getElementById("newimg").src = result[0];
+                }
+            }
+            var pattern1 = /\/movie\/bi\/pi\/basic.nhn\?code=[\d]*/g;
+            var num1 = 0;
+            while((result1 = pattern1.exec(str))!=null)
+            {
+                num1++;
+                if(num1==2)
+                {
+                    document.getElementById("newlink").href = "https://movie.naver.com" + result1;
+                }
+            }
+            var pattern2 = />[가-힣]{3}</g;
+            var num2 = 0;
+            while((result2 = pattern2.exec(str))!=null)
+            {
+                num2++;
+                if(num2==2)
+                {
+                    document.getElementById("newname").value = result2;
+                }
+            }
+        }
+        function ju1() {
+            var pattern = /https:\/\/search.[\"']?([^>\"']+)/g;
+            var num = 0;
+            while((result = pattern.exec(str))!=null)
+            {
+                num++;
+                if(num==3)
+                {
+                    document.getElementById("newimg").src = result[0];
+                }
+            }
+            var pattern1 = /\/movie\/bi\/pi\/basic.nhn\?code=[\d]*/g;
+            var num1 = 0;
+            while((result1 = pattern1.exec(str))!=null)
+            {
+                num1++;
+                if(num1==3)
+                {
+                    document.getElementById("newlink").href = "https://movie.naver.com" + result1;
+                }
+            }
+            var pattern2 = />[가-힣]{3}</g;
+            var num2 = 0;
+            while((result2 = pattern2.exec(str))!=null)
+            {
+                num2++;
+                if(num2==3)
+                {
+                    document.getElementById("newname").value = result2;
+                }
+            }
+        }
+        function ju2() {
+            var pattern = /https:\/\/search.[\"']?([^>\"']+)/g;
+            var num = 0;
+            while((result = pattern.exec(str))!=null)
+            {
+                num++;
+                if(num==4)
+                {
+                    document.getElementById("newimg").src = result[0];
+                }
+            }
+            var pattern1 = /\/movie\/bi\/pi\/basic.nhn\?code=[\d]*/g;
+            var num1 = 0;
+            while((result1 = pattern1.exec(str))!=null)
+            {
+                num1++;
+                if(num1==4)
+                {
+                    document.getElementById("newlink").href = "https://movie.naver.com" + result1;
+                }
+            }
+            var pattern2 = />[가-힣]{3}</g;
+            var num2 = 0;
+            while((result2 = pattern2.exec(str))!=null)
+            {
+                num2++;
+                if(num2==4)
+                {
+                    document.getElementById("newname").value = result2;
+                }
+            }
+        }
+        function ju3() {
+            var pattern = /https:\/\/search.[\"']?([^>\"']+)/g;
+            var num = 0;
+            while((result = pattern.exec(str))!=null)
+            {
+                num++;
+                if(num==5)
+                {
+                    document.getElementById("newimg").src = result[0];
+                }
+            }
+            var pattern1 = /\/movie\/bi\/pi\/basic.nhn\?code=[\d]*/g;
+            var num1 = 0;
+            while((result1 = pattern1.exec(str))!=null)
+            {
+                num1++;
+                if(num1==5)
+                {
+                    document.getElementById("newlink").href = "https://movie.naver.com" + result1;
+                }
+            }
+            var pattern2 = />[가-힣]{3}</g;
+            var num2 = 0;
+            while((result2 = pattern2.exec(str))!=null)
+            {
+                num2++;
+                if(num2==5)
+                {
+                    document.getElementById("newname").value = result2;
+                }
+            }
+        }
+        function ju4() {
+            var pattern = /https:\/\/search.[\"']?([^>\"']+)/g;
+            var num = 0;
+            while((result = pattern.exec(str))!=null)
+            {
+                num++;
+                if(num==6)
+                {
+                    document.getElementById("newimg").src = result[0];
+                }
+            }
+            var pattern1 = /\/movie\/bi\/pi\/basic.nhn\?code=[\d]*/g;
+            var num1 = 0;
+            while((result1 = pattern1.exec(str))!=null)
+            {
+                num1++;
+                if(num1==6)
+                {
+                    document.getElementById("newlink").href = "https://movie.naver.com" + result1;
+                }
+            }
+            var pattern2 = />[가-힣]{3}</g;
+            var num2 = 0;
+            while((result2 = pattern2.exec(str))!=null)
+            {
+                num2++;
+                if(num2==6)
+                {
+                    document.getElementById("newname").value = result2;
+                }
+            }
+        }
+    </script>
 </head>
 <body>
     <center>
@@ -28,6 +222,13 @@
                 <td></td>
                 <td></td>
                 <th><input type="text" id="title1" value="" disabled></th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
             </tr>
@@ -53,6 +254,13 @@
                 <td></td>
             </tr>
             <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
                 <td><a href="" id="link2"><img src="" id="img2"></a></td>
                 <td><a href="" id="link3"><img src="" id="img3"></a></td>
                 <td><a href="" id="link4"><img src="" id="img4"></a></td>
@@ -66,26 +274,32 @@
                 <td><input type="text" id="name5" value="" disabled></td>
                 <td><input type="text" id="name6" value="" disabled></td>
             </tr>
-            <tr>
-                <td><input type="text" id="text1" value="" disabled></td>
-                <td><input type="text" id="text2" value="" disabled></td>
-                <td><input type="text" id="text3" value="" disabled></td>
-                <td><input type="text" id="text4" value="" disabled></td>
-                <td><input type="text" id="text5" value="" disabled></td>
-            </tr>
             <th><input type="hidden" id="title3" value="" disabled></th>
             <th><input type="hidden" id="title4" value="" disabled></th>
             <th><input type="hidden" id="title5" value="" disabled></th>
             <th><input type="hidden" id="title6" value="" disabled></th>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><input type="radio" name="ju" onclick="gam()">감독<input type="radio" name="ju" onclick="ju()">주연 1<input type="radio" name="ju" onclick="ju1()">주연 2<input type="radio" name="ju" onclick="ju2()">주연 3<input type="radio" name="ju" onclick="ju3()">주연 4<input type="radio" name="ju" onclick="ju4()">주연 5</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><a href="" id="newlink"><img src="" id="newimg"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><td><input type="text" id="newname" value="" disabled></td></td>
+            </tr>
         </table>
+
     </center>
     <script>
-        // https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201803%2F2018030821300648-4393927.jpg&type=u111_139&quality=95
-        // https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201703%2F20170309160737361.jpg&type=u111_139&quality=95
-        // https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201502%2F20150204115955124-6648994.jpg&type=u111_139&quality=95
-        // https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201603%2F20160318132802865-5073725.jpg&type=u111_139&quality=95
-        // https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201710%2F2017102414073587.jpg&type=u111_139&quality=95
-        // https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201611%2F20161121181615139.jpg&type=u111_139&quality=95
         var str =  `<div class="obj_section">
                     <div class="people">
                     <div class="title_area">
