@@ -20,200 +20,6 @@
             outline: none;
         }
     </style>
-    <script>
-        function gam() {
-            var pattern = /https:\/\/search.[\"']?([^>\"']+)/g;
-            var num = 0;
-            while((result = pattern.exec(str))!=null)
-            {
-                num++;
-                if(num==1)
-                {
-                    document.getElementById("newimg").src = result[0];
-                }
-            }
-            var pattern1 = /\/movie\/bi\/pi\/basic.nhn\?code=[\d]*/g;
-            var num1 = 0;
-            while((result1 = pattern1.exec(str))!=null)
-            {
-                num1++;
-                if(num1==1)
-                {
-                    document.getElementById("newlink").href = "https://movie.naver.com" + result1;
-                }
-            }
-            var pattern2 = />[가-힣]{3}</g;
-            var num2 = 0;
-            while((result2 = pattern2.exec(str))!=null)
-            {
-                num2++;
-                if(num2==1)
-                {
-                    document.getElementById("newname").value = result2;
-                }
-            }
-        }
-        function ju() {
-            var pattern = /https:\/\/search.[\"']?([^>\"']+)/g;
-            var num = 0;
-            while((result = pattern.exec(str))!=null)
-            {
-                num++;
-                if(num==2)
-                {
-                    document.getElementById("newimg").src = result[0];
-                }
-            }
-            var pattern1 = /\/movie\/bi\/pi\/basic.nhn\?code=[\d]*/g;
-            var num1 = 0;
-            while((result1 = pattern1.exec(str))!=null)
-            {
-                num1++;
-                if(num1==2)
-                {
-                    document.getElementById("newlink").href = "https://movie.naver.com" + result1;
-                }
-            }
-            var pattern2 = />[가-힣]{3}</g;
-            var num2 = 0;
-            while((result2 = pattern2.exec(str))!=null)
-            {
-                num2++;
-                if(num2==2)
-                {
-                    document.getElementById("newname").value = result2;
-                }
-            }
-        }
-        function ju1() {
-            var pattern = /https:\/\/search.[\"']?([^>\"']+)/g;
-            var num = 0;
-            while((result = pattern.exec(str))!=null)
-            {
-                num++;
-                if(num==3)
-                {
-                    document.getElementById("newimg").src = result[0];
-                }
-            }
-            var pattern1 = /\/movie\/bi\/pi\/basic.nhn\?code=[\d]*/g;
-            var num1 = 0;
-            while((result1 = pattern1.exec(str))!=null)
-            {
-                num1++;
-                if(num1==3)
-                {
-                    document.getElementById("newlink").href = "https://movie.naver.com" + result1;
-                }
-            }
-            var pattern2 = />[가-힣]{3}</g;
-            var num2 = 0;
-            while((result2 = pattern2.exec(str))!=null)
-            {
-                num2++;
-                if(num2==3)
-                {
-                    document.getElementById("newname").value = result2;
-                }
-            }
-        }
-        function ju2() {
-            var pattern = /https:\/\/search.[\"']?([^>\"']+)/g;
-            var num = 0;
-            while((result = pattern.exec(str))!=null)
-            {
-                num++;
-                if(num==4)
-                {
-                    document.getElementById("newimg").src = result[0];
-                }
-            }
-            var pattern1 = /\/movie\/bi\/pi\/basic.nhn\?code=[\d]*/g;
-            var num1 = 0;
-            while((result1 = pattern1.exec(str))!=null)
-            {
-                num1++;
-                if(num1==4)
-                {
-                    document.getElementById("newlink").href = "https://movie.naver.com" + result1;
-                }
-            }
-            var pattern2 = />[가-힣]{3}</g;
-            var num2 = 0;
-            while((result2 = pattern2.exec(str))!=null)
-            {
-                num2++;
-                if(num2==4)
-                {
-                    document.getElementById("newname").value = result2;
-                }
-            }
-        }
-        function ju3() {
-            var pattern = /https:\/\/search.[\"']?([^>\"']+)/g;
-            var num = 0;
-            while((result = pattern.exec(str))!=null)
-            {
-                num++;
-                if(num==5)
-                {
-                    document.getElementById("newimg").src = result[0];
-                }
-            }
-            var pattern1 = /\/movie\/bi\/pi\/basic.nhn\?code=[\d]*/g;
-            var num1 = 0;
-            while((result1 = pattern1.exec(str))!=null)
-            {
-                num1++;
-                if(num1==5)
-                {
-                    document.getElementById("newlink").href = "https://movie.naver.com" + result1;
-                }
-            }
-            var pattern2 = />[가-힣]{3}</g;
-            var num2 = 0;
-            while((result2 = pattern2.exec(str))!=null)
-            {
-                num2++;
-                if(num2==5)
-                {
-                    document.getElementById("newname").value = result2;
-                }
-            }
-        }
-        function ju4() {
-            var pattern = /https:\/\/search.[\"']?([^>\"']+)/g;
-            var num = 0;
-            while((result = pattern.exec(str))!=null)
-            {
-                num++;
-                if(num==6)
-                {
-                    document.getElementById("newimg").src = result[0];
-                }
-            }
-            var pattern1 = /\/movie\/bi\/pi\/basic.nhn\?code=[\d]*/g;
-            var num1 = 0;
-            while((result1 = pattern1.exec(str))!=null)
-            {
-                num1++;
-                if(num1==6)
-                {
-                    document.getElementById("newlink").href = "https://movie.naver.com" + result1;
-                }
-            }
-            var pattern2 = />[가-힣]{3}</g;
-            var num2 = 0;
-            while((result2 = pattern2.exec(str))!=null)
-            {
-                num2++;
-                if(num2==6)
-                {
-                    document.getElementById("newname").value = result2;
-                }
-            }
-        }
-    </script>
 </head>
 <body>
     <center>
@@ -281,7 +87,7 @@
             <tr>
                 <td></td>
                 <td></td>
-                <td><input type="radio" name="ju" onclick="gam()">감독<input type="radio" name="ju" onclick="ju()">주연 1<input type="radio" name="ju" onclick="ju1()">주연 2<input type="radio" name="ju" onclick="ju2()">주연 3<input type="radio" name="ju" onclick="ju3()">주연 4<input type="radio" name="ju" onclick="ju4()">주연 5</td>
+                <td><input type="radio" name="ju" onclick="gam('김용화')">감독<input type="radio" name="ju" onclick="gam('하정우')">주연 1<input type="radio" name="ju" onclick="gam('주지훈')">주연 2<input type="radio" name="ju" onclick="gam('김향기')">주연 3<input type="radio" name="ju" onclick="gam('마동석')">주연 4<input type="radio" name="ju" onclick="gam('김동욱')">주연 5</td>
                 <td></td>
                 <td></td>
             </tr>
@@ -378,21 +184,167 @@
             link++;
             document.getElementById("link"+link).href = "https://movie.naver.com" + result1;
         }
-        var pattern2 = />[가-힣]{3}</g;
+        var pattern2 = />([가-힣]{3})</g;
         var name = 0;
         while((result2 = pattern2.exec(str))!=null)
         {
             console.log(result2);
             name++;
-            document.getElementById("name"+name).value = result2;
+            document.getElementById("name"+name).value = result2[1];
         }
-        var pattern3 = />[가-힣]{2}</g;
+        var pattern3 = />([가-힣]{2})</g;
         var title = 0;
         while((result3 = pattern3.exec(str))!=null)
         {
             console.log(result3);
             title++;
-            document.getElementById("title"+title).value = result3;
+            document.getElementById("title"+title).value = result3[1];
+        }
+        function gam(txt) {
+            var pattern = /https:\/\/search.[\"']?([^>\"']+)/g;
+            var num = 0;
+            while((result = pattern.exec(str))!=null)
+            {
+                num++;
+                if(txt == '김용화')
+                {
+                    if(num==1)
+                    {
+                        document.getElementById("newimg").src = result[0];
+                    }
+                }
+                if(txt == '하정우')
+                {
+                    if(num==2)
+                    {
+                        document.getElementById("newimg").src = result[0];
+                    }
+                }
+                if(txt == '주지훈')
+                {
+                    if(num==3)
+                    {
+                        document.getElementById("newimg").src = result[0];
+                    }
+                }
+                if(txt == '김향기')
+                {
+                    if(num==4)
+                    {
+                        document.getElementById("newimg").src = result[0];
+                    }
+                }
+                if(txt == '마동석')
+                {
+                    if(num==5)
+                    {
+                        document.getElementById("newimg").src = result[0];
+                    }
+                }
+                if(txt == '김동욱')
+                {
+                    if(num==6)
+                    {
+                        document.getElementById("newimg").src = result[0];
+                    }
+                }
+            }
+            var pattern1 = /\/movie\/bi\/pi\/basic.nhn\?code=[\d]*/g;
+            var num1 = 0;
+            while((result1 = pattern1.exec(str))!=null)
+            {
+                num1++;
+                if(txt == '김용화')
+                {
+                    if(num1==1)
+                    {
+                        document.getElementById("newlink").href = "https://movie.naver.com" + result1;
+                    }
+                }
+                if(txt == '하정우')
+                {
+                    if(num1==2)
+                    {
+                        document.getElementById("newlink").href = "https://movie.naver.com" + result1;
+                    }
+                }
+                if(txt == '주지훈')
+                {
+                    if(num1==3)
+                    {
+                        document.getElementById("newlink").href = "https://movie.naver.com" + result1;
+                    }
+                }
+                if(txt == '김향기')
+                {
+                    if(num1==4)
+                    {
+                        document.getElementById("newlink").href = "https://movie.naver.com" + result1;
+                    }
+                }
+                if(txt == '마동석')
+                {
+                    if(num1==5)
+                    {
+                        document.getElementById("newlink").href = "https://movie.naver.com" + result1;
+                    }
+                }
+                if(txt == '김동욱')
+                {
+                    if(num1==6)
+                    {
+                        document.getElementById("newlink").href = "https://movie.naver.com" + result1;
+                    }
+                }
+            }
+            var pattern2 = />([가-힣]{3})</g;
+            var num2 = 0;
+            while((result2 = pattern2.exec(str))!=null)
+            {
+                num2++;
+                if(txt == '김용화')
+                {
+                    if(num2==1)
+                    {
+                        document.getElementById("newname").value = result2[1];
+                    }
+                }
+                if(txt == '하정우')
+                {
+                    if(num2==2)
+                    {
+                        document.getElementById("newname").value = result2[1];
+                    }
+                }
+                if(txt == '주지훈')
+                {
+                    if(num2==3)
+                    {
+                        document.getElementById("newname").value = result2[1];
+                    }
+                }
+                if(txt == '김향기')
+                {
+                    if(num2==4)
+                    {
+                        document.getElementById("newname").value = result2[1];
+                    }
+                }
+                if(txt == '마동석')
+                {
+                    if(num2==5)
+                    {
+                        document.getElementById("newname").value = result2[1];
+                    }
+                }
+                if(txt == '김동욱')
+                {
+                    if(num2==6)
+                    {
+                        document.getElementById("newname").value = result2[1];
+                    }
+                }
+            }
         }
     </script>
 </body>
